@@ -323,31 +323,41 @@ html, body {
 .wrap, .card, .grid2, .table, .chartRow, .chartMeta {
   max-width: 100%;
 }
-@media (max-width: 600px) {
+/* ===== Mobile fix stabil final ===== */
 
-  .wrap {
-    padding: 10px;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.topbar {
+  width: 100%;
+}
+
+.wrap {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+.card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#pie {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
 
   .summary {
     grid-template-columns: 1fr;
   }
 
-  .chartRow {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  #pie {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 360px;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .percent {
-    font-size: 36px;
-  }
 }
+
 
