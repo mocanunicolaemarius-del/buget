@@ -22,7 +22,11 @@ body{
 }
 
 .topbar{
-  position:sticky; top:0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   background:#0b252b;
   padding:14px 16px;
   border-bottom:2px solid var(--border);
@@ -309,3 +313,41 @@ button.danger:hover{filter:brightness(.95)}
   }
 
 }
+/* === Fix: no horizontal scroll on mobile === */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+/* make all sections respect screen width */
+.wrap, .card, .grid2, .table, .chartRow, .chartMeta {
+  max-width: 100%;
+}
+@media (max-width: 600px) {
+
+  .wrap {
+    padding: 10px;
+  }
+
+  .summary {
+    grid-template-columns: 1fr;
+  }
+
+  .chartRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #pie {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 360px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .percent {
+    font-size: 36px;
+  }
+}
+
