@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buget</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="title">Buget</div>
+    <div class="month" id="monthLabel"></div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="card">
+      <h2>Rezumat</h2>
+
+      <div class="summary">
+        <div class="kpi">
+          <div class="kpiLabel">Total venit</div>
+          <div class="kpiValue" id="totalIncome">0 lei</div>
+        </div>
+
+        <div class="kpi">
+          <div class="kpiLabel">Total cheltuieli</div>
+          <div class="kpiValue" id="totalExpense">0 lei</div>
+        </div>
+
+        <div class="kpi" id="balanceBox">
+          <div class="kpiLabel">Sold</div>
+          <div class="kpiValue" id="balance">0 lei</div>
+        </div>
+      </div>
+
+      <div class="chartRow">
+        <canvas id="pie" width="220" height="220"></canvas>
+        <div class="chartMeta">
+          <div class="percent" id="spentPercent">0%</div>
+          <div class="legend">
+            <div class="legItem"><span class="dot dotSpend"></span> Cheltuieli: <b id="legSpend">0 lei</b></div>
+            <div class="legItem"><span class="dot dotLeft"></span> Rămas: <b id="legLeft">0 lei</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="danger" id="resetMonthBtn">Resetează luna</button>
+      </div>
+    </section>
+
+    <section class="grid2">
+      <section class="card">
+        <h2>Venituri</h2>
+
+        <form class="form" id="incomeForm">
+          <input type="text" id="incomeName" placeholder="Nume (ex: Salariu)" required />
+          <input type="text" id="incomeAmount" placeholder="Sumă (ex: 8500,50)" required />
+          <input type="date" id="incomeDate" required />
+          <button type="submit">Adaugă</button>
+        </form>
+
+        <div class="table">
+          <div class="tHead">
+            <div>Nume</div><div>Sumă</div><div>Data</div><div></div>
+          </div>
+          <div class="tBody" id="incomeList"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Cheltuieli</h2>
+
+        <form class="form" id="expenseForm">
+          <input type="text" id="expenseName" placeholder="Nume (ex: Rată apartament)" required />
+          <input type="text" id="expenseAmount" placeholder="Sumă (ex: 2200)" required />
+          <input type="date" id="expenseDate" required />
+          <button type="submit">Adaugă</button>
+
+          <label class="quickCheck">
+            <input type="checkbox" id="expenseQuick" />
+            Salvează ca buton rapid
+          </label>
+        </form>
+
+        <div class="quickBar">
+          <div class="quickTitle">Butoane rapide</div>
+          <div class="quickBtns" id="quickBtns"></div>
+        </div>
+
+        <div class="table">
+          <div class="tHead">
+            <div>Nume</div><div>Sumă</div><div>Data</div><div></div>
+          </div>
+          <div class="tBody" id="expenseList"></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="card">
+      <h2>Investiții</h2>
+
+      <div class="invGrid">
+        <div class="invBox">
+          <div class="invLabel">Suma investită</div>
+          <div class="invValue" id="invInvestedLabel">0 lei</div>
+        </div>
+        <div class="invBox">
+          <div class="invLabel">Suma totală</div>
+          <div class="invValue" id="invTotalLabel">0 lei</div>
+        </div>
+        <div class="invBox">
+          <div class="invLabel">Profit</div>
+          <div class="invValue" id="invProfitLabel">0 lei</div>
+        </div>
+      </div>
+
+      <form class="form invForm" id="invForm">
+        <input type="text" id="invInvested" placeholder="Investit (ex: 3000)" required />
+        <input type="text" id="invTotal" placeholder="Total (ex: 3255)" required />
+        <button type="submit">Setează</button>
+      </form>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
