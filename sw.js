@@ -1,8 +1,9 @@
-const CACHE_NAME = "buget-cache-v3";
+const CACHE_NAME = "buget-cache-v4";
 const ASSETS = [
   "./",
   "./index.html",
   "./style.css",
+  "./style.css?v=4",
   "./app.js",
   "./manifest.webmanifest",
   "./icon-192.png",
