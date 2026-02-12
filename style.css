@@ -391,23 +391,52 @@ input::placeholder{ color: rgba(255,255,255,.6); }
   .title{ font-size:26px; }
 
   .summary{
-    grid-template-columns: 1fr; /* 🔥 nu mai înghesuie 3 pe rând */
+    grid-template-columns: 1fr;
   }
 
   .chartRow{
-    flex-direction:column;
-    align-items:stretch;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
   }
 
   #pie{
-    width: min(360px, 100%);
-    height: auto;
-    margin: 0 auto;
+    width: 150px !important;
+    height: 150px !important;
+    margin: 0;
+    flex: 0 0 auto;
   }
 
-  .percent{ font-size:36px; }
+  .chartMeta{
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .percent{
+    font-size: 34px;
+    margin: 0;
+  }
+
+  .legend{
+    font-size: 14px;
+  }
 
   .tHead, .tRow{
-    grid-template-columns: 1fr 110px 110px 80px;
+    grid-template-columns: 1fr 110px 90px;
   }
+
+  .tHead > :nth-child(3),
+  .tRow  > :nth-child(3){
+    display:none;
+  }
+
+  .rowBtns{
+    gap: 6px;
+  }
+
+  .smallBtn{
+    padding: 7px 9px;
+  }
+
 }
